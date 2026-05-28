@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prominent Check</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #f7f8fb;
+      color: #101828;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(420px, 100%);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 8vw, 54px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 28px;
+      color: #667085;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    button {
+      width: 100%;
+      min-height: 58px;
+      border: 0;
+      border-radius: 8px;
+      background: #0057b8;
+      color: white;
+      font: inherit;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 16px 40px rgba(0, 87, 184, 0.22);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    .message {
+      display: none;
+      margin-top: 26px;
+      padding: 22px;
+      border: 1px solid #ffd6d6;
+      border-radius: 8px;
+      background: #fff5f5;
+      color: #b42318;
+      font-size: clamp(22px, 6vw, 34px);
+      font-weight: 850;
+      line-height: 1.18;
+    }
+
+    .message.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Prominent Check</h1>
+    <p>Druk op de knop voor de uitslag.</p>
+    <button id="check-button" type="button">Start de check</button>
+    <div class="message" id="message" role="status" aria-live="polite">
+      Sorry, je bent te prominent voor ons. Je ligt eruit!
+    </div>
+  </main>
+
+  <script>
+    const button = document.querySelector("#check-button");
+    const message = document.querySelector("#message");
+
+    button.addEventListener("click", () => {
+      message.classList.add("show");
+      button.textContent = "Uitslag bekend";
+    });
+  </script>
+</body>
+</html>

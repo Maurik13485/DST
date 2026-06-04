@@ -73,10 +73,10 @@ sup {
 }
 
 .brand strong {
-  max-width: 220px;
   color: var(--ink);
   font-size: 17px;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .main-nav {
@@ -110,12 +110,12 @@ sup {
 }
 
 .hero {
-  min-height: 88vh;
+  min-height: 78vh;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
-  gap: 72px;
-  align-items: center;
-  padding: 120px 48px 58px;
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 1fr);
+  gap: 84px;
+  align-items: start;
+  padding: 104px 48px 54px;
   background:
     linear-gradient(90deg, rgba(0, 174, 202, 0.1), transparent 42%),
     linear-gradient(180deg, #fff 0%, #f7fbff 100%);
@@ -123,7 +123,7 @@ sup {
 
 .hero-copy,
 .hero-product {
-  width: min(100%, 640px);
+  width: min(100%, 700px);
 }
 
 .hero-copy {
@@ -243,7 +243,7 @@ p {
 }
 
 .section-inner {
-  width: min(1280px, 100%);
+  width: min(1360px, 100%);
   margin: 0 auto;
 }
 
@@ -823,7 +823,7 @@ p {
   }
 
   .hero {
-    padding-top: 150px;
+    padding-top: 132px;
   }
 
   .section,

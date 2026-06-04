@@ -13,6 +13,8 @@
   --shadow: 0 20px 70px rgba(16, 24, 40, 0.12);
   --serif: Georgia, "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --page-pad: clamp(18px, 2.4vw, 40px);
+  --content-max: 1760px;
 }
 
 * {
@@ -46,11 +48,11 @@ sup {
   inset: 0 0 auto;
   z-index: 30;
   min-height: 92px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 28px;
-  padding: 0 48px;
+  padding: 0 var(--page-pad);
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
@@ -63,6 +65,7 @@ sup {
   gap: 14px;
   color: var(--ink);
   text-decoration: none;
+  flex: 0 0 auto;
 }
 
 .brand img {
@@ -82,8 +85,16 @@ sup {
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
   gap: 22px;
+  overflow-x: auto;
+  scrollbar-width: none;
   white-space: nowrap;
+}
+
+.main-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .main-nav a {
@@ -110,20 +121,22 @@ sup {
 }
 
 .hero {
-  min-height: 78vh;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(460px, 1fr);
-  gap: 84px;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 1fr);
+  gap: clamp(42px, 5vw, 96px);
   align-items: start;
-  padding: 104px 48px 54px;
+  padding: 108px var(--page-pad) 28px;
   background:
     linear-gradient(90deg, rgba(0, 174, 202, 0.1), transparent 42%),
     linear-gradient(180deg, #fff 0%, #f7fbff 100%);
 }
 
-.hero-copy,
+.hero-copy {
+  width: min(100%, 780px);
+}
+
 .hero-product {
-  width: min(100%, 700px);
+  width: min(100%, 600px);
 }
 
 .hero-copy {
@@ -176,7 +189,7 @@ h2 {
 }
 
 h1 {
-  max-width: 720px;
+  max-width: 780px;
   font-size: clamp(44px, 6vw, 76px);
 }
 
@@ -198,7 +211,7 @@ p {
 }
 
 .hero p {
-  max-width: 650px;
+  max-width: 720px;
   margin: 26px 0 34px;
   font-size: 18px;
 }
@@ -236,14 +249,14 @@ p {
 }
 
 .proof-strip {
-  padding: 34px 48px;
+  padding: 24px var(--page-pad);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: #fff;
 }
 
 .section-inner {
-  width: min(1360px, 100%);
+  width: min(var(--content-max), 100%);
   margin: 0 auto;
 }
 
@@ -272,7 +285,7 @@ p {
 }
 
 .section {
-  padding: 104px 48px;
+  padding: 92px var(--page-pad);
 }
 
 .section.compact {
@@ -560,7 +573,7 @@ p {
 }
 
 .ecosystem {
-  padding: 56px 48px;
+  padding: 52px var(--page-pad);
   background: var(--soft);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -631,7 +644,7 @@ p {
 }
 
 .contact-section {
-  padding: 104px 48px;
+  padding: 92px var(--page-pad);
   background:
     linear-gradient(90deg, rgba(0, 87, 184, 0.1), transparent 44%),
     #fff;
@@ -691,7 +704,7 @@ p {
 }
 
 .site-footer {
-  padding: 46px 48px;
+  padding: 46px var(--page-pad);
   border-top: 1px solid var(--line);
   background: var(--navy);
   color: #fff;
@@ -748,6 +761,14 @@ p {
 }
 
 @media (max-width: 1120px) {
+  .main-nav {
+    gap: 14px;
+  }
+
+  .main-nav a {
+    font-size: 12px;
+  }
+
   .team-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -755,11 +776,7 @@ p {
 
 @media (max-width: 1040px) {
   .site-header {
-    padding: 0 24px;
-  }
-
-  .main-nav {
-    gap: 14px;
+    padding: 0 var(--page-pad);
   }
 
   .hero,
@@ -768,8 +785,8 @@ p {
   .ecosystem,
   .contact-section,
   .site-footer {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
   }
 
   .hero {
@@ -802,18 +819,25 @@ p {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .site-header {
     height: auto;
     min-height: 96px;
     align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 6px;
     padding-top: 12px;
     padding-bottom: 12px;
   }
 
+  .brand img {
+    width: 64px;
+    height: 64px;
+  }
+
   .main-nav {
     width: 100%;
+    justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 5px;
   }
@@ -823,9 +847,11 @@ p {
   }
 
   .hero {
-    padding-top: 132px;
+    padding-top: 152px;
   }
+}
 
+@media (max-width: 760px) {
   .section,
   .contact-section {
     padding-top: 76px;

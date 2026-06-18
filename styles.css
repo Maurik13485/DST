@@ -262,13 +262,14 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 12px 21px;
+  min-height: 48px;
+  padding: 13px 23px;
   border: 1px solid var(--line);
   border-radius: 6px;
   font: inherit;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
+  line-height: 1.15;
   text-decoration: none;
   cursor: pointer;
 }
@@ -529,6 +530,12 @@ p {
 .application-card {
   display: flex;
   flex-direction: column;
+}
+
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
 }
 
 .application-card ul {

@@ -165,9 +165,37 @@ sup {
   text-transform: uppercase;
 }
 
-.hero-product img {
+.hero-product model-viewer {
   width: 100%;
+  height: clamp(390px, 44vw, 580px);
   display: block;
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.3) 42%, transparent 68%),
+    linear-gradient(180deg, #eef2f6 0%, #e7edf4 100%);
+  --poster-color: transparent;
+}
+
+.hero-3d-status {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.hero-3d-hint {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  z-index: 2;
+  margin: 0;
+  color: rgba(52, 64, 84, 0.68);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .eyebrow {

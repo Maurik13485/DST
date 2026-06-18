@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Digital Sensing Technologies</title>
   <meta name="description" content="Digital Sensing Technologies develops BreathPass, a mobile e-Nose platform for breath-analysis applications in epilepsy research, forensic screening, and selected partnerships.">
-  <link rel="stylesheet" href="./styles.css?v=responsive-layout-2">
+  <link rel="stylesheet" href="./styles.css?v=responsive-layout-3d-hero">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -36,7 +37,20 @@
         </div>
       </div>
       <div class="hero-product reveal">
-        <img src="./breathpass-device.png" alt="BreathPass handheld e-Nose device">
+        <model-viewer
+          src="./NLW12_viewer/NLW12.glb"
+          alt="BreathPass handheld e-Nose 3D device model"
+          camera-controls
+          auto-rotate
+          rotation-per-second="22deg"
+          interaction-prompt="none"
+          shadow-intensity="0.75"
+          exposure="1"
+          camera-orbit="35deg 68deg 115%"
+          field-of-view="34deg">
+          <div class="hero-3d-status" slot="poster">Loading 3D model...</div>
+        </model-viewer>
+        <p class="hero-3d-hint">Drag to rotate</p>
       </div>
     </section>
 
@@ -66,7 +80,7 @@
         </div>
         <div class="device-layout reveal">
           <div class="device-card">
-            <img src="./breathpass-device.png" alt="BreathPass device">
+            <img src="./patient-device-plus10-crisp-local-repair-no-redraw.png" alt="Patient using the BreathPass device">
           </div>
           <div class="mobile-card">
             <img src="./breathpass-mobile.png" alt="BreathPass mobile measurement screen">

@@ -6,6 +6,11 @@ This is a static website for Digital Sensing Technologies, rebuilt from `Website
 
 Open `index.html` in a browser. No Node.js, Python, install step, or server is required.
 
+## Deployment and domains
+
+The GitHub Pages site uses `www.digitalsensingtechnologies.com` as the primary custom domain.
+The domain `digitalsensing.tech` is configured as a redirect to `www.digitalsensingtechnologies.com`.
+
 ## Files
 
 - `index.html` - page structure and content

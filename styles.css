@@ -284,6 +284,40 @@ p {
   color: var(--blue);
 }
 
+.poc-band {
+  padding: 52px var(--page-pad);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.poc-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1fr);
+  gap: 54px;
+  align-items: start;
+}
+
+.poc-layout h2 {
+  max-width: 520px;
+}
+
+.poc-copy {
+  display: grid;
+  gap: 16px;
+}
+
+.poc-copy p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.68;
+}
+
+.poc-copy .button {
+  width: fit-content;
+  margin-top: 8px;
+}
+
 .proof-strip {
   padding: 44px var(--page-pad);
   border-top: 1px solid var(--line);
@@ -844,6 +878,7 @@ p {
   }
 
   .split-layout,
+  .poc-layout,
   .contact-layout,
   .status-layout,
   .study-band,

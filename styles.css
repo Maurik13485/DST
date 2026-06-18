@@ -146,29 +146,37 @@ sup {
 .hero-product {
   justify-self: start;
   position: relative;
-  padding: 28px;
+  padding: 28px 28px 56px;
   border-radius: 8px;
   background: #eef2f6;
   box-shadow: var(--shadow);
 }
 
-.hero-product::before {
-  content: "BreathPass";
+.hero-brand-label {
   position: absolute;
-  left: 24px;
-  bottom: 20px;
+  left: 28px;
+  bottom: 28px;
   z-index: 2;
+  margin: 0;
   color: var(--blue);
   font-size: 12px;
-  font-weight: 850;
+  font-weight: 400;
+  line-height: 1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.hero-brand-label sup {
+  font-size: 0.55em;
+  margin-left: 2px;
+  vertical-align: 0.55em;
 }
 
 .hero-product model-viewer {
   width: 100%;
   height: clamp(390px, 44vw, 580px);
   display: block;
+  margin-bottom: 32px;
   border-radius: 6px;
   background:
     radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.3) 42%, transparent 68%),
@@ -188,13 +196,13 @@ sup {
 
 .hero-3d-hint {
   position: absolute;
-  right: 24px;
-  bottom: 18px;
+  right: 44px;
+  bottom: 76px;
   z-index: 2;
   margin: 0;
   color: rgba(52, 64, 84, 0.68);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1;
 }
 
@@ -277,10 +285,10 @@ p {
 }
 
 .proof-strip {
-  padding: 24px var(--page-pad);
+  padding: 44px var(--page-pad);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: #fff;
+  background: #f8fbfd;
 }
 
 .section-inner {
@@ -291,12 +299,19 @@ p {
 .proof-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 .proof-grid div {
   display: grid;
-  gap: 8px;
+  gap: 14px;
+  min-height: 168px;
+  padding: 28px;
+  align-content: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 44px rgba(16, 24, 40, 0.09);
 }
 
 .proof-grid strong {
@@ -308,8 +323,8 @@ p {
 
 .proof-grid span {
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 .section {
@@ -430,7 +445,7 @@ p {
 .team-card p,
 .evidence-card p {
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .device-layout {
@@ -519,7 +534,7 @@ p {
   display: grid;
   grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
   gap: 28px;
-  align-items: center;
+  align-items: start;
 }
 
 .evidence-card:first-child {

@@ -41,6 +41,7 @@ for (const section of sections) {
 }
 
 const form = document.querySelector("#contact-form");
+const contactRecipient = ["maurik.vandenheuvel", "newlifewearables.com"].join("@");
 
 if (form) {
   form.addEventListener("submit", event => {
@@ -62,6 +63,6 @@ if (form) {
 
     const subject = encodeURIComponent(`DST website enquiry: ${interest || "General contact"}`);
     const encodedBody = encodeURIComponent(body);
-    window.location.href = `mailto:info@digitalsensing.tech?subject=${subject}&body=${encodedBody}`;
+    window.location.href = `mailto:${contactRecipient}?subject=${subject}&body=${encodedBody}`;
   });
 }

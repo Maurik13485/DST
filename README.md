@@ -30,6 +30,8 @@ The domain `digitalsensing.tech` is configured as a redirect to `www.digitalsens
 
 The site is intentionally static so it can be shared as a folder or ZIP and opened directly in a browser.
 
+The contact form is a client-side `mailto:` helper. It opens the visitor's own email client with a prepared message to the DST contact mailbox; it does not submit to a server, database, CRM, or form inbox. Because there is no server-side submission endpoint, a captcha cannot protect this form. If the site later needs direct in-page form submission, use a backend form service with a honeypot plus Cloudflare Turnstile or reCAPTCHA.
+
 Source notes:
 
 - Slide 6 of `20250915-IM NewLife Wearables.pptx` supplied the short team bio material.
